@@ -13,18 +13,11 @@
   </head>
 
   <body>
-  	<header class="navbar navbar-fixed-top navbar-inverse">
-  		<div class="container">
-  			<%= link_to "Private Events", '#', id: "logo" %>
-  			<nav>
-  				<ul class="nav navbar-nav navbar-right">
-  					<li><%= link_to "Home", '#' %></li>
-  					<li><%= link_to "Events", '#' %></li>
-  					<li><%= link_to "Log in", '#' %></li>
-  				</ul> 					
-  			</nav>
-  		</div>
+  	<%= render 'layouts/header' %>
   	<div class="container">		
+      <% flash.each do |message_type, message| %>
+        <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+      <% end %>  
     	<%= yield %>
   	</div>  
   </body>
