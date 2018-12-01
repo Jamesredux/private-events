@@ -1,4 +1,3 @@
-<h1>Users#show</h1>
 <h2>Profile page for: <%= @user.name %></h2>
 
 <p>The email is <%= @user.email %></p>
@@ -8,7 +7,8 @@
 
 	<%= will_paginate @created_events %>
 		<% @created_events.each do |event| %>
-			<li>Event: <%= event.title %>. Location: <%= event.location %>. Date: 
+			<li><%= link_to event.title, event %>.</li>
+			<li> Location: <%= event.location %>. Date: 
 				<%= event.date.strftime("%d/%m/%y at %H:%M") %></li>
 
 		<% end %>
@@ -18,6 +18,6 @@
 	
 <% end %>
 	
-<p>This page will list all the events that this user has created and maybe also the ones he is attending. Split past and future. Have a button to switch between created and attending. </p>
+<%= link_to "Create a new event", new_event_path, class: "btn btn-sml btn-primary" %>
 
 

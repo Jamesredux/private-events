@@ -1,0 +1,15 @@
+<h3>Events</h3>
+<% if @events.any? %>
+
+	<%= will_paginate %>
+		<% @events.each do |event| %>
+			<li><%= link_to event.title, event %>.</li>
+			<li> Location: <%= event.location %>. Date: 
+				<%= event.date.strftime("%d/%m/%y at %H:%M") %></li>
+
+		<% end %>
+		<%= will_paginate  %>
+<% else %>
+	 There are no events
+	
+<% end %>
