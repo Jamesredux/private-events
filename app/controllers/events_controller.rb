@@ -1,7 +1,9 @@
 class EventsController < ApplicationController
+	before_action :logged_in_user, only: [:create, :destroy]
 
 	def show
 		@event = Event.find(params[:id])
+		@attendees =  @event.attendees.all.paginate(page: params[:page], per_page: 12)
 	end
 
 	def index
@@ -21,7 +23,9 @@ class EventsController < ApplicationController
 		end	
 	end
 
-	private
+	def destroy
+		
+	end
 
 	private
 

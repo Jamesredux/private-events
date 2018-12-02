@@ -1,5 +1,5 @@
 <h2>Profile page for: <%= @user.name %></h2>
-
+<div class="row">
 <p>The email is <%= @user.email %></p>
 
 <h3>Events</h3>
@@ -19,5 +19,27 @@
 <% end %>
 	
 <%= link_to "Create a new event", new_event_path, class: "btn btn-sml btn-primary" %>
+
+</div>
+<div class="attended_events">
+	<h3>Events user is attending</h3>
+	<% if @past_events.any? %>
+			Past Events
+		<% @past_events.each do |event| %>
+			<li><%= link_to event.title, event %></li>
+		<% end %>
+		<%= will_paginate @past_events %>
+	<% end %>	
+
+		<% if @upcoming_events.any? %>
+			Upcoming Events
+		<% @upcoming_events.each do |event| %>
+			<li><%= link_to event.title, event %></li>
+		<% end %>
+		<%= will_paginate @upcoming_events %>
+	<% end %>			
+
+	
+</div>
 
 

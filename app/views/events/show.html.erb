@@ -11,9 +11,21 @@
 
 	<li>Location: <%= @event.location %></li>
 	<li>Date and Time: <%= @event.date %></li>
-	<li>Created by <%= @event.creator.name %></li>
+	<li>Created by <%= link_to @event.creator.name, @event.creator %></li>
 </div>
+<div>
+	<h2>Attendees</h2>
+	<% if @attendees.any? %>
+		<%= will_paginate @attendees %>
+		<% @attendees.each do |attendee| %>
+			<li><%= link_to attendee.name, attendee %>.</li>
+		<% end %>
+		<%= will_paginate @attendees %>
 
+
+
+	<% end %>
+</div>
 
 
 		
