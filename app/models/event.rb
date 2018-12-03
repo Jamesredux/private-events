@@ -6,6 +6,10 @@ class Event < ApplicationRecord
 	#scopes
 	scope :upcoming, -> { where('date >= :now', {now: Time.now }) }
 	scope :past, -> { where('date < :now', {now: Time.now}) } 
+
+	validates :title, presence: true, length: { maximum: 75 }
+	validates :location, presence: true, length: { maximum: 75 }
+	validates :date, presence: true
 	
 	
 

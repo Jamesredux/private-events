@@ -1,14 +1,23 @@
-<h3>Events</h3>
+<h2>Events</h2>
 <% if @events.any? %>
-
-	<%= will_paginate %>
-		<% @events.each do |event| %>
+	<% if @upcoming_events.any? %>
+	<h3>Upcoming Events</h3>
+		<% @upcoming_events.each do |event| %>
 			<li><%= link_to event.title, event %>.</li>
 			<li> Location: <%= event.location %>. Date: 
 				<%= event.date.strftime("%d/%m/%y at %H:%M") %></li>
-
 		<% end %>
-		<%= will_paginate  %>
+	<% end %>
+	
+	<% if @past_events.any? %>
+	<h3>Past Events</h3>
+		<% @past_events.each do |event| %>
+			<li><%= link_to event.title, event %>.</li>	
+			<li> Location: <%= event.location %>. Date: 
+				<%= event.date.strftime("%d/%m/%y at %H:%M") %></li>
+		<% end %>
+	<% end %>
+		
 <% else %>
 	 There are no events
 	

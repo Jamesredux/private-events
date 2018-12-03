@@ -7,7 +7,9 @@ class EventsController < ApplicationController
 	end
 
 	def index
-		@events = Event.all.paginate(page: params[:page], per_page: 5)
+		@events = Event.all 
+		@past_events = Event.past
+		@upcoming_events = Event.upcoming
 	end
 
 	def new
@@ -17,7 +19,8 @@ class EventsController < ApplicationController
 	def create
 		@event =  current_user.created_events.build(event_params)
 		if @event.save
-		 redirect_to root_url
+			flash[:success] = "New event created"
+		 redirect_to @event
 		else
 			render 'new' 
 		end	
