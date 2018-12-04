@@ -26,6 +26,17 @@
 
 	<% end %>
 </div>
+</aside>
+<div class="row">
+
+	<%= form_for(@event) do |f| %>
+			<%= render 'shared/error_messages', object: f.object %>
+
+			<%= f.check_box :attendees %>
+			<%= f.submit "Attend this event", class: "btn btn-primary" %>
+	<% end %>		
+</div>
+
 
 
 		
