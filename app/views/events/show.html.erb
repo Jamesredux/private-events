@@ -27,7 +27,7 @@
 	<% end %>
 </div>
 </aside>
-<% if logged_in? && #@event.date >= Time.now %>
+<% if logged_in? && @event.date >= Time.now %>
 	<%= render 'add_attendee' %>
 <% end %>
 
