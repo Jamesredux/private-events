@@ -13,10 +13,14 @@
 
 			
 			
-
+		<div class="date_input">
 			<%= f.label :date  %>
 			<%= f.datetime_select :date %>
-
+		</div>	
+		
+		<div class="check_box">
+			<%= f.label "Tick if you will be attending the event." %>
+			<%= f.check_box :attendees %> 
 			<%= f.submit "Create new event", class: "btn btn-primary" %>
 	<% end %>	
 	</div>

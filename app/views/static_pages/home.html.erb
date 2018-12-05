@@ -1,12 +1,6 @@
-<% provide(:title, "Home") %>
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Private Events <%= yield(:title) %> </title>
-	</head>
-	<body>
-		<h1>Private Events</h1>
-		<p>This will be the home page. With signup and log in links.</p>
-		<%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
-	</body>
-</html>
+
+<% if logged_in? %>
+	<%= render 'static_pages/logged_in' %>
+<% else %>
+	<%= render 'static_pages/logged_out' %>
+<% end %>

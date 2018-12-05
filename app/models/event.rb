@@ -1,6 +1,8 @@
 class Event < ApplicationRecord
+
+
 	belongs_to :creator, :class_name => "User"
-	has_many :event_attendees, :foreign_key => "attended_event_id"
+	has_many :event_attendees, :foreign_key => "attended_event_id", dependent: :destroy
 	has_many :attendees, :through => :event_attendees, :source => "attendee"
 
 	#scopes
@@ -10,8 +12,7 @@ class Event < ApplicationRecord
 	validates :title, presence: true, length: { maximum: 75 }
 	validates :location, presence: true, length: { maximum: 75 }
 	validates :date, presence: true
-	
-	
+		
 
 	 
 end

@@ -1,0 +1,15 @@
+<% provide(:title, "Home") %>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Private Events <%= yield(:title) %> </title>
+	</head>
+	<body>
+		<h1>Private Events</h1>
+			<ul>
+				<li><%= link_to "All Events", '#' %></li>
+				<li><%= link_to "Your Events", '#' %></li>
+				<li><%= link_to "Create new event", '#' %></li>
+			</ul>
+	</body>
+</html>

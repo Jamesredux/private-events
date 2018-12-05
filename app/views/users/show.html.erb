@@ -9,6 +9,10 @@
 	<%= will_paginate @upcoming_created_events %>
 		<% @upcoming_created_events.each do |event| %>
 			<li><%= link_to event.title, event %>.</li>
+					<% if current_user == event.creator %>
+					<%= link_to "delete", event, method: :delete,
+																				data: {confirm: "Are you sure?" } %>
+					<% end %>
 			<li> Location: <%= event.location %>. Date: 
 				<%= event.date.strftime("%d/%m/%y at %H:%M") %></li>
 
