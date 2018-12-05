@@ -1,63 +1,28 @@
-<h2>Profile page for: <%= @user.name %></h2>
+<h2>User Profile: <%= @user.name %>.</h2>
 <div class="row">
-<p>The email is <%= @user.email %></p>
 
-<h3>Events</h3>
+
+<h1>Events</h1>
 <% if @created_events.any? %>
-	<% if @upcoming_created_events.any? %>
-		Upcoming Events...
-	<%= will_paginate @upcoming_created_events %>
-		<% @upcoming_created_events.each do |event| %>
-			<li><%= link_to event.title, event %>.</li>
-					<% if current_user == event.creator %>
-					<%= link_to "delete", event, method: :delete,
-																				data: {confirm: "Are you sure?" } %>
-					<% end %>
-			<li> Location: <%= event.location %>. Date: 
-				<%= event.date.strftime("%d/%m/%y at %H:%M") %></li>
-
-		<% end %>
-		<%= will_paginate @upcoming_created_events %>
-	<% end %>
-		
-	<% if @past_created_events.any? %>
-			Past Created events...
-		<%= will_paginate @past_created_events %>
-		<% @past_created_events.each do |event| %>
-			<li><%= link_to event.title, event %>.</li>
-			<li> Location: <%= event.location %>. Date: 
-				<%= event.date.strftime("%d/%m/%y at %H:%M") %></li>
-
-		<% end %>
-		<%= will_paginate @past_created_events %>
-	<% end %>			
+	
+		<%= render 'created_events' %>
 <% else %>
+
 	 This user has not created any events.
 	
 <% end %>
-	
-<%= link_to "Create a new event", new_event_path, class: "btn btn-sml btn-primary" %>
-
 </div>
-<div class="attended_events">
-	<h3>Events user is attending</h3>
-	<% if @past_attended_events.any? %>
-			Past Events
-		<% @past_attended_events.each do |event| %>
-			<li><%= link_to event.title, event %></li>
-		<% end %>
-		<%= will_paginate @past_attended_events %>
+
+	<% if current_user?(User.find(params[:id])) %>
+		<div class="btn">
+		<p>Would you like to create a new event?</p>
+				<%= link_to "Create a new event", new_event_path, class: "btn btn-sml btn-primary" %>
+		</div>
 	<% end %>	
-
-		<% if @upcoming_attended_events.any? %>
-			Upcoming Events
-		<% @upcoming_attended_events.each do |event| %>
-			<li><%= link_to event.title, event %></li>
-		<% end %>
-		<%= will_paginate @upcoming_attended_events %>
-	<% end %>			
-
-	
+<div class="row">
+<% if @attended_events.any? %>
+	<%= render 'attended_events' %>
+<% end %>	
 </div>
 
 

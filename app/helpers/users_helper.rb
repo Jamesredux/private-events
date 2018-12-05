@@ -18,5 +18,8 @@ def past_created_events(user)
 	past_events = @created_events.past.paginate(page: params[:page], per_page: 5)
 end
 
+def current_user?(user)
+	current_user == user
+end
 
 end

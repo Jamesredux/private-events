@@ -1,0 +1,18 @@
+<div class="row">
+	<h2>Events user is attending.</h2>
+	<% if @upcoming_attended_events.any? %>
+		<h3>	Upcoming Events. </h3>
+			<% @upcoming_attended_events.each do |event| %>
+				<li><%= link_to event.title, event %></li>
+			<% end %>
+	<% end %>			
+</div>
+<div class="row">
+	
+	<% if @past_attended_events.any? %>
+		<h3>	Past Events. </h3>
+			<% @past_attended_events.each do |event| %>
+				<li><%= link_to event.title, event %></li>
+				<% end %>
+			<% end %>	
+</div>

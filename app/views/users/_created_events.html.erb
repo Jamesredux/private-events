@@ -1,0 +1,23 @@
+
+	<% if @upcoming_created_events.any? %>
+		<div class="row">
+		<h2>Upcoming Events...</h2>
+			<% @upcoming_created_events.each do |event| %>
+				<li><%= link_to event.title, event %>. Date: <%= event.date.strftime("%d/%m/%y") %>.
+					<% if current_user == event.creator %>
+						<%= link_to "Cancel", event, method: :delete,
+																					data: {confirm: "Are you sure?" } %>
+					<% end %>
+				</li>
+			<% end %>		
+	<% end %>
+	</div>	
+
+	<% if @past_created_events.any? %>
+		<div class="row">
+			<h2> Previous events created by this user.</h2>
+				<% @past_created_events.each do |event| %>
+					<li><%= link_to event.title, event %>. Date <%= event.date.strftime("%d/%m/%y") %></li>
+				<% end %>
+	<% end %>			
+		</div>
