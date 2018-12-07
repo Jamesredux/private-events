@@ -5,8 +5,24 @@
 		<title>Private Events <%= yield(:title) %> </title>
 	</head>
 	<body>
-		<h1>Private Events</h1>
-		<p>This will be the home page. With signup and log in links.</p>
-		<%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm h-50 welcome">
+					<h1>Welcome</h1>
+					<p>This is Private Events. A site to create and promote your events.<br> Please log in or sign up if you are not already a member.</p>
+					<div class="text-center">
+						<%= link_to "Login", login_path, class: "btn btn-lg btn-primary" %>
+						<%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm">
+					<p>This is a demo site so here I will put some extra information. Including an account that visitors can use to log in. You can create your own account or if you would just like to look around you can use this one... </p>
+				</div>
+				</div>
+		</div>
 	</body>
 </html>

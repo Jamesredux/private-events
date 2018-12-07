@@ -30,3 +30,53 @@ input {
 .introjames {
 	letter-spacing: 10px;
 }
+
+.navbar a {
+	padding:  10px;
+	color: #808284;
+	font-size: 1.2em;
+}
+
+.navbar a:hover {
+	color: #c4c8ce;
+	text-decoration: none;
+}
+
+#logo {
+	font-size: 2em;
+
+}
+
+.navbar-right {
+
+	padding-top: 3px;
+}
+
+.welcome {
+	font-size: 1.2em;
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
+.signup_btn {
+
+}
+
+.home_link {
+	height: 100px;
+	width: 100%;
+
+}
+
+.home_link_1 {
+	background-color: #99D3DF;
+}
+
+.home_link_2 {
+	background-color: #88BBD6;
+
+}
+
+.home_link_3 {
+	background-color: #CDCDCD;
+}

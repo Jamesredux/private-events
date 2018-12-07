@@ -5,11 +5,26 @@
 		<title>Private Events <%= yield(:title) %> </title>
 	</head>
 	<body>
-		<h1>Private Events</h1>
+		<div class="container">
+			<div class="row">
+				<h1>Private Events</h1>
+			</div>
+			<div class="row">
+				<li class="home_link home_link_1"><%= link_to "All Events", events_path %></li>
+				
+				
+			</div>
+			<div class="row">
+				<li class="home_link home_link_2"><%= link_to "Your Events", current_user %></li>
+			</div>
+			<div class="row">
+				<li class="home_link home_link_3"><%= link_to "Create new event", new_event_path %></li>
+			</div>
+
+		</div>
+		
 			<ul>
-				<li><%= link_to "All Events", events_path %></li>
-				<li><%= link_to "Your Events", current_user %></li>
-				<li><%= link_to "Create new event", new_event_path %></li>
+
 			</ul>
 	</body>
 </html>
