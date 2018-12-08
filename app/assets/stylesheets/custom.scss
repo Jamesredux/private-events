@@ -24,13 +24,6 @@ input {
 
 
 
-
-
-
-.introjames {
-	letter-spacing: 10px;
-}
-
 .navbar a {
 	padding:  10px;
 	color: #808284;
@@ -79,4 +72,117 @@ input {
 
 .home_link_3 {
 	background-color: #CDCDCD;
+}
+
+.home_page {
+	margin-top: 30px;
+	margin-bottom: 20px;
+}
+
+/*   Events */
+
+.events-wrapper {
+	background-color: #d7e7f7;
+	box-shadow: -2px 2px 3px 3px rgba(0,0,0,0.58);
+	margin-top: 10px;
+}
+
+.events-header {
+	background-color: #3f75a8;
+	color: #534554;
+	margin-bottom: 10px; 
+	
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 50px;
+	letter-spacing: 1px;
+	font-size: 2em;
+	font-weight: bold;
+	
+	
+
+
+}
+
+#event-row {
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin: 5px;
+	
+	
+	background-image: linear-gradient(rgba(121,186,247,0.75), rgba(121,186,247,0.1));
+
+}
+
+.event-title a {
+	color: #0c0c0c;
+	font-size: 1.5em;
+	padding-right: 30px;
+	padding-left: 30px;
+	text-transform: capitalize;
+}
+
+.event-title a:hover {
+	color: #0c0c0c;
+	text-decoration: none;
+	font-size: 1.6em;
+}
+
+.event-location {
+	text-align: right;
+	padding-top: 10px;
+	padding-left: 20px;
+}
+
+.events-index {
+	font-size: 4em;
+}
+
+.events-index-upcoming {
+	border-bottom: 2px solid #3f75a8;
+	padding-bottom: 5px;
+	margin-bottom: 20px;
+
+}
+
+/* user page */
+
+.user-info {
+	margin: 20px;
+	border-bottom: 1px solid black;
+}
+
+.attended-events {
+	margin-top: 25px;
+	border-top: 3px dotted black;
+}
+
+.event-details {
+	margin-top: 20px;
+	background-color: #d7e7f7;
+}
+
+.add-attendee {
+	margin: 10px;
+	padding: 10px;
+	border: 1px solid #3f75a8;
+	border-radius: 3px;
+}
+
+.check_box {
+
+}
+
+.user-events-header {
+	background-color: #7aadff;
+	color: #534554;
+	margin-bottom: 5px; 
+	padding-top: 5px;
+	padding-left: 50px;
+	font-size: 1.8em;
+	
+	
+
+
 }

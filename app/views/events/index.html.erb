@@ -1,24 +1,24 @@
-<h2>Events</h2>
+<div class="container">
+	<div class="row">
+		<div class="col events-wrapper">
+			<h1 class= "events-index"><center>Events</center></h1>
+
 <% if @events.any? %>
-	<% if @upcoming_events.any? %>
-	<h3>Upcoming Events</h3>
-		<% @upcoming_events.each do |event| %>
-			<li><%= link_to event.title, event %>.</li>
-			<li> Location: <%= event.location %>. Date: 
-				<%= event.date.strftime("%d/%m/%y at %H:%M") %></li>
-		<% end %>
-	<% end %>
-	
-	<% if @past_events.any? %>
-	<h3>Past Events</h3>
-		<% @past_events.each do |event| %>
-			<li><%= link_to event.title, event %>.</li>	
-			<li> Location: <%= event.location %>. Date: 
-				<%= event.date.strftime("%d/%m/%y at %H:%M") %></li>
-		<% end %>
-	<% end %>
-		
+	<div class="events-index-upcoming">
+		<%= render 'upcoming_events' %>	
+	</div>
+
+	<div class="events-index-past">
+		<%= render 'past_events' %>
+	</div>	
+
 <% else %>
 	 There are no events
 	
 <% end %>
+
+	</div>
+</div>
+
+</div>
+

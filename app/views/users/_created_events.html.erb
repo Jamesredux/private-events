@@ -1,23 +1,42 @@
+<div class="events-wrapper">
+<% if @upcoming_created_events.any? %>
+	<div class="row events-header">
+	<h2>Events user has created.</h2>
+	</div>
 
-	<% if @upcoming_created_events.any? %>
-		<div class="row">
-		<h2>Upcoming Events...</h2>
-			<% @upcoming_created_events.each do |event| %>
-				<li><%= link_to event.title, event %>. Date: <%= event.date.strftime("%d/%m/%y") %>.
-					<% if current_user == event.creator %>
-						<%= link_to "Cancel", event, method: :delete,
-																					data: {confirm: "Are you sure?" } %>
-					<% end %>
-				</li>
-			<% end %>		
-	<% end %>
-	</div>	
+	<div class="row user-events-header">
+		<p>Upcoming Events...</p>
+	</div>
+
+	<% @upcoming_created_events.each do |event| %>
+
+		<div class="row" id="event-row">
+			<p class="event-title"><%= link_to event.title, event %>.</p> 
+			<p>Date: <%= event.date.strftime("%d/%m/%y") %>.</p>
+
+			<% if current_user == event.creator %>
+			<%= link_to "Cancel", event, method: :delete,
+																		data: {confirm: "Are you sure?" } %>
+			
+			<% end %>
+				
+		</div>
+	<% end %>		
+<% end %>
+		
 
 	<% if @past_created_events.any? %>
-		<div class="row">
-			<h2> Previous events created by this user.</h2>
+		<div class="row user-events-header">
+			<p> Previous events created by this user.</p>
+		</div>	
 				<% @past_created_events.each do |event| %>
-					<li><%= link_to event.title, event %>. Date <%= event.date.strftime("%d/%m/%y") %></li>
+				<div class="row" id="event-row">
+					<p class="event-title"><%= link_to event.title, event %></p>
+					<p> Date <%= event.date.strftime("%d/%m/%y") %></p>
+				</div>
 				<% end %>
+				
 	<% end %>			
-		</div>
+		
+</div>
+

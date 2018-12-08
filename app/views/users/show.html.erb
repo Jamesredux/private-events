@@ -1,28 +1,32 @@
-<h2>User Profile: <%= @user.name %>.</h2>
-<div class="row">
+<div class="container user-info">
+	<div class="row">
+		<div class="col">
+			<h2>User Profile: <%= @user.name %>.</h2>
+		</div>
 
-
-<h1>Events</h1>
-<% if @created_events.any? %>
-	
-		<%= render 'created_events' %>
-<% else %>
-
-	 This user has not created any events.
-	
-<% end %>
-</div>
-
-	<% if current_user?(User.find(params[:id])) %>
-		<div class="btn">
-		<p>Would you like to create a new event?</p>
-				<%= link_to "Create a new event", new_event_path, class: "btn btn-sml btn-primary" %>
+		<div class="col">
+			<p>User has created <%= @user.created_events.count %> events.</p>
+		</div>
+		<% if current_user?(User.find(params[:id])) %>
+		<div class="col">
+			<%= link_to "Create a new event", new_event_path, class: "btn btn-sml btn-primary" %>
 		</div>
 	<% end %>	
-<div class="row">
-<% if @attended_events.any? %>
+	</div>	
+</div>
+
+<div class="container created-events">
+	<% if @created_events.any? %>
+	
+		<%= render 'created_events' %>
+	<% else %>
+		 This user has not created any events.
+	<% end %>
+</div>
+
+<div class="container attended-events">
+	
+	<% if @attended_events.any? %>
 	<%= render 'attended_events' %>
 <% end %>	
 </div>
-
-

@@ -6,25 +6,23 @@
 	</head>
 	<body>
 		<div class="container">
-			<div class="row">
-				<h1>Private Events</h1>
+			<div class="row home_page">
+				<div class="col-sm-7">
+					<h1>Private Events</h1>
+				</div>
+				<div class="col-sm-5">
+					<%= link_to "Create new event", new_event_path, class: "btn btn-lg btn-primary" %>
+				</div>	
 			</div>
 			<div class="row">
-				<li class="home_link home_link_1"><%= link_to "All Events", events_path %></li>
-				
-				
-			</div>
-			<div class="row">
-				<li class="home_link home_link_2"><%= link_to "Your Events", current_user %></li>
-			</div>
-			<div class="row">
-				<li class="home_link home_link_3"><%= link_to "Create new event", new_event_path %></li>
+				<div class="col events-wrapper">
+					<% if @events.any? %>
+					<%= render 'events/upcoming_events' %>
+					<% end %>
+				</div>
 			</div>
 
 		</div>
 		
-			<ul>
-
-			</ul>
 	</body>
 </html>

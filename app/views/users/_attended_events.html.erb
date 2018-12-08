@@ -1,18 +1,41 @@
-<div class="row">
+
+
+
+<div class="events-wrapper">
+	<div class="row events-header">
 	<h2>Events user is attending.</h2>
-	<% if @upcoming_attended_events.any? %>
-		<h3>	Upcoming Events. </h3>
-			<% @upcoming_attended_events.each do |event| %>
-				<li><%= link_to event.title, event %></li>
-			<% end %>
-	<% end %>			
-</div>
-<div class="row">
-	
+	</div>
+
+<% if @upcoming_attended_events.any? %>
+	<div class="row user-events-header">
+		<p>Upcoming Events...</p>
+	</div>
+
+	<% @upcoming_attended_events.each do |event| %>
+
+		<div class="row" id="event-row">
+			<p class="event-title"><%= link_to event.title, event %>.</p> 
+			<p>Date: <%= event.date.strftime("%d/%m/%y") %>.</p>
+
+		
+			
+			</div>
+	<% end %>		
+<% end %>
+		
+
+
 	<% if @past_attended_events.any? %>
-		<h3>	Past Events. </h3>
-			<% @past_attended_events.each do |event| %>
-				<li><%= link_to event.title, event %></li>
+		<div class="row user-events-header">
+			<p> Previous events attended by this user.</p>
+		</div>	
+				<% @past_attended_events.each do |event| %>
+				<div class="row" id="event-row">
+					<p class="event-title"><%= link_to event.title, event %></p>
+					<p> Date <%= event.date.strftime("%d/%m/%y") %></p>
+				</div>
 				<% end %>
-			<% end %>	
+				
+	<% end %>			
+		
 </div>
