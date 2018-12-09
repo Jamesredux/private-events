@@ -1,3 +1,7 @@
+.alert {
+	margin-top: 10px;
+}
+
 
 /* forms */
 
@@ -15,6 +19,7 @@ input {
 
 
 #error_explanation {
+	margin-top: 10px;
 	color: red;
 	ul {
 		color: red;
@@ -181,8 +186,13 @@ input {
 	padding-top: 5px;
 	padding-left: 50px;
 	font-size: 1.8em;
-	
-	
+}
 
+.input-field {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.date_input {
 
 }

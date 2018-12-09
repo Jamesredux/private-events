@@ -1,25 +1,43 @@
 <% provide(:title, "Log in") %>
-<h1>Log In</h1>
+
+<div class="container login">
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<h1>Log In</h1>
+		</div>
+	</div>	
 
 
 <div class="row">
 	<div class="col-md-6 col-md-offset-3">
 		<%= form_for(:session, url: login_path) do |f| %>
-
+		<div class="input-field">
 			<%= f.label :email %>
 			<%= f.email_field :email, class: 'form-control' %>
-
+		</div>
+		
+		<div class="input-field">	
 			<%= f.label :password %>
 			<%= f.password_field :password, class: 'form-control' %>
+		</div>
+		
+		<div class="input-field">
 
 			<%= f.label :remember_me, class: "Checkbox inline" do %>
-				<%= f.check_box :remember_me %>
-				<span>Remember me on this computer</span>
-			<% end %>	
+			<%= f.check_box :remember_me %>
+			<span>Remember me on this computer.</span>
+		</div>		
+			
+		<% end %>	
 
 			<%= f.submit "Log in", class: "btn btn-primary" %>
 		<% end %>
 		
-	<p>New user? <%= link_to "Sign up now!", signup_path %></p>		
+	<p class="input-field">New user? <%= link_to "Sign up now!", signup_path %></p>		
 	</div>
 </div>
+
+</div>
+
+
+

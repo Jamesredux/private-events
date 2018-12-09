@@ -1,3 +1,4 @@
+<div class="container">
 <h1>New Event</h1>
 
 <div class="row">
@@ -5,22 +6,26 @@
 		<%= form_for(@event) do |f| %>
 			<%= render 'shared/error_messages', object: f.object %>
 
+		<div class="input-field">
 			<%= f.label :title %>
 			<%= f.text_field :title %>
-
-			<%= f.label :location %>
-			<%= f.text_field :location %>
-
-			
-			
-		<div class="date_input">
-			<%= f.label :date  %>
-			<%= f.datetime_select :date %>
 		</div>	
 		
-		<div class="check_box">
-			<%= f.label "Tick if you will be attending the event." %>
+		<div class="input-field">	
+			<%= f.label :location %>
+			<%= f.text_field :location %>
+		</div>	
+			
+			
+		<span class="date_input">
+
+			<%= f.label :date  %>
+			<%= f.datetime_select :date, min: Date.today, :minute_step => 15 %>
+		</span>	
+		
+		<div class="check_box input-field">
 			<%= f.check_box :attendees %> 
+			<%= f.label "Tick if you will be attending the event." %>
 		</div>
 		<div class="button">
 			<%= f.submit "Create new event", class: "btn btn-primary btn-lg" %>
@@ -29,3 +34,5 @@
 
 	</div>
 </div>	
+
+</div>

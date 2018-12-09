@@ -2,6 +2,20 @@
 
 Done as part of Odin Project.
 
+My notes
+
+Some changes.  I did not add feature where you can invite other people, I did not see the point.
+It would annoy me to get invited. I might add this feature if I come back and add to this.
+I would want to make it so that users can be friends with each other. Then you can invite people in your friends list.
+
+Destroy Dependancies.
+If an event is cancelled then all the attendees are deleted but if a user is deleted the event is not automatically cancelled. (At present users can not be deleted via the site.)
+
+To do:
+validations 
+delete user
+
+
 https://www.theodinproject.com/courses/ruby-on-rails/lessons/associations
 
 

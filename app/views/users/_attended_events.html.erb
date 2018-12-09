@@ -39,3 +39,38 @@
 	<% end %>			
 		
 </div>
+
+
+
+<p>
+ 
+  <button class="btn btn-primary btn-block" type="button" data-toggle="collapse" data-target="#upcomingAttendedEvents" aria-expanded="false" aria-controls="upcomingAttendedEvents">
+    Upcoming Events
+  </button>
+</p>
+<div class="collapse" id="upcomingAttendedEvents">
+  <div class="card card-body">
+  	<% @upcoming_attended_events.each do |event| %>
+				<div class="row" id="event-row">
+					<p class="event-title"><%= link_to event.title, event %></p>
+					<p> Date <%= event.date.strftime("%d/%m/%y") %></p>
+				</div>
+				<% end %>
+  </div>
+</div>
+<p>
+ 
+  <button class="btn btn-primary btn-block" type="button" data-toggle="collapse" data-target="#pastAttendedEvents" aria-expanded="false" aria-controls="pastAttendedEvents">
+    Past Attended Events
+  </button>
+</p>
+<div class="collapse" id="pastAttendedEvents">
+  <div class="card card-body">
+  	<% @past_attended_events.each do |event| %>
+				<div class="row" id="event-row">
+					<p class="event-title"><%= link_to event.title, event %></p>
+					<p> Date <%= event.date.strftime("%d/%m/%y") %></p>
+				</div>
+				<% end %>
+  </div>
+</div>
