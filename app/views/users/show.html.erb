@@ -20,13 +20,17 @@
 	
 		<%= render 'created_events' %>
 	<% else %>
-		 This user has not created any events.
+		<div class="events-header">	
+		 	<p>This user has not created any events</p>
+		</div> 
 	<% end %>
 </div>
 
 <div class="container attended-events">
 	
 	<% if @attended_events.any? %>
-	<%= render 'attended_events' %>
-<% end %>	
+		<%= render 'attended_events' %>
+	<% else %>
+		The user has not signed up to attend any events yet.		
+	<% end %>	
 </div>

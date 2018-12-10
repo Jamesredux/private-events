@@ -93,7 +93,7 @@ input {
 }
 
 .events-header {
-	background-color: #3f75a8;
+	background-color: #638ae8;
 	color: #534554;
 	margin-bottom: 10px; 
 	
@@ -102,12 +102,11 @@ input {
 	padding-left: 50px;
 	letter-spacing: 1px;
 	font-size: 2em;
-	font-weight: bold;
 	
-	
-
-
 }
+
+
+
 
 #event-row {
 	padding-top: 10px;
@@ -180,6 +179,15 @@ input {
 }
 
 .user-events-header {
+	background-color: #7aadff;
+	color: #534554;
+	margin-bottom: 5px; 
+	padding-top: 5px;
+	padding-left: 50px;
+	font-size: 1.8em;
+}
+
+#user-events-header {
 	background-color: #7aadff;
 	color: #534554;
 	margin-bottom: 5px; 

@@ -5,8 +5,8 @@
 	</div>
 		<% @upcoming_events.each do |event| %>
 			<div class="row" id="event-row">
-				<p class="event-title"><%= link_to event.title, event %>.</p>
-				<p class= "event-location"> Location: <%= event.location %>. Date: 
+				<p class="event-title"><%= link_to event.title, event %></p>
+				<p class= "event-location">Location: <%= event.location %> | Date: 
 				<%= event.date.strftime("%d/%m/%y at %H:%M") %></p>
 			</div>	
 		<% end %>

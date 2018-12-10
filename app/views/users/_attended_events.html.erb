@@ -3,74 +3,45 @@
 
 <div class="events-wrapper">
 	<div class="row events-header">
-	<h2>Events user is attending.</h2>
+		<h2>Events User is Attending.</h2>
 	</div>
 
-<% if @upcoming_attended_events.any? %>
-	<div class="row user-events-header">
-		<p>Upcoming Events...</p>
-	</div>
+	<% if @upcoming_attended_events.any? %>
+		<button class="btn btn-block" id="user-events-header" type="button" data-toggle="collapse" data-target="#upcomingAttendedEvents" aria-expanded="false" aria-controls="upcomingAttendedEvents">
+    	Upcoming Events 
+  	</button>
 
-	<% @upcoming_attended_events.each do |event| %>
+  	<div class="collapse" id="upcomingAttendedEvents">
+  		<div class="card card-body">
+				<% @upcoming_attended_events.each do |event| %>
 
-		<div class="row" id="event-row">
-			<p class="event-title"><%= link_to event.title, event %>.</p> 
-			<p>Date: <%= event.date.strftime("%d/%m/%y") %>.</p>
-
-		
-			
+					<div class="row" id="event-row">
+						<p class="event-title"><%= link_to event.title, event %></p> 
+						<p>Date: <%= event.date.strftime("%d/%m/%y") %></p>
+					</div>
+				<% end %>
 			</div>
-	<% end %>		
-<% end %>
-		
-
+		</div>				
+	<% end %>
 
 	<% if @past_attended_events.any? %>
-		<div class="row user-events-header">
-			<p> Previous events attended by this user.</p>
-		</div>	
+		<button class="btn btn-block" id="user-events-header" type="button" data-toggle="collapse" data-target="#pastAttendedEvents" aria-expanded="false" aria-controls="pastAttendedEvents">
+    	Previous Events 
+  	</button>
+
+  	<div class="collapse" id="pastAttendedEvents">
+  		<div class="card card-body">
 				<% @past_attended_events.each do |event| %>
-				<div class="row" id="event-row">
-					<p class="event-title"><%= link_to event.title, event %></p>
-					<p> Date <%= event.date.strftime("%d/%m/%y") %></p>
-				</div>
+
+					<div class="row" id="event-row">
+						<p class="event-title"><%= link_to event.title, event %></p> 
+						<p>Date: <%= event.date.strftime("%d/%m/%y") %></p>
+					</div>
 				<% end %>
-				
-	<% end %>			
+			</div>
+		</div>				
+	<% end %>
 		
 </div>
 
 
-
-<p>
- 
-  <button class="btn btn-primary btn-block" type="button" data-toggle="collapse" data-target="#upcomingAttendedEvents" aria-expanded="false" aria-controls="upcomingAttendedEvents">
-    Upcoming Events
-  </button>
-</p>
-<div class="collapse" id="upcomingAttendedEvents">
-  <div class="card card-body">
-  	<% @upcoming_attended_events.each do |event| %>
-				<div class="row" id="event-row">
-					<p class="event-title"><%= link_to event.title, event %></p>
-					<p> Date <%= event.date.strftime("%d/%m/%y") %></p>
-				</div>
-				<% end %>
-  </div>
-</div>
-<p>
- 
-  <button class="btn btn-primary btn-block" type="button" data-toggle="collapse" data-target="#pastAttendedEvents" aria-expanded="false" aria-controls="pastAttendedEvents">
-    Past Attended Events
-  </button>
-</p>
-<div class="collapse" id="pastAttendedEvents">
-  <div class="card card-body">
-  	<% @past_attended_events.each do |event| %>
-				<div class="row" id="event-row">
-					<p class="event-title"><%= link_to event.title, event %></p>
-					<p> Date <%= event.date.strftime("%d/%m/%y") %></p>
-				</div>
-				<% end %>
-  </div>
-</div>

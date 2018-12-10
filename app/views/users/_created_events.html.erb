@@ -1,42 +1,46 @@
+
+
 <div class="events-wrapper">
-<% if @upcoming_created_events.any? %>
 	<div class="row events-header">
-	<h2>Events user has created.</h2>
+		<h2>Events Created by User.</h2>
 	</div>
 
-	<div class="row user-events-header">
-		<p>Upcoming Events...</p>
-	</div>
+	<% if @upcoming_created_events.any? %>
+		<button class="btn btn-block" id="user-events-header" type="button" data-toggle="collapse" data-target="#upcomingCreatedEvents" aria-expanded="false" aria-controls="upcomingCreatedEvents">
+    	Upcoming Events 
+  	</button>
 
-	<% @upcoming_created_events.each do |event| %>
+  	<div class="collapse" id="upcomingCreatedEvents">
+  		<div class="card card-body">
+				<% @upcoming_created_events.each do |event| %>
 
-		<div class="row" id="event-row">
-			<p class="event-title"><%= link_to event.title, event %>.</p> 
-			<p>Date: <%= event.date.strftime("%d/%m/%y") %>.</p>
-
-			<% if current_user == event.creator %>
-			<%= link_to "Cancel", event, method: :delete,
-																		data: {confirm: "Are you sure?" } %>
-			
-			<% end %>
-				
-		</div>
-	<% end %>		
-<% end %>
-		
+					<div class="row" id="event-row">
+						<p class="event-title"><%= link_to event.title, event %></p> 
+						<p>Date: <%= event.date.strftime("%d/%m/%y") %></p>
+					</div>
+				<% end %>
+			</div>
+		</div>				
+	<% end %>
 
 	<% if @past_created_events.any? %>
-		<div class="row user-events-header">
-			<p> Previous events created by this user.</p>
-		</div>	
+		<button class="btn btn-block" id="user-events-header" type="button" data-toggle="collapse" data-target="#pastCreatedEvents" aria-expanded="false" aria-controls="pastCreatedEvents">
+    	Previous Events 
+  	</button>
+
+  	<div class="collapse" id="pastCreatedEvents">
+  		<div class="card card-body">
 				<% @past_created_events.each do |event| %>
-				<div class="row" id="event-row">
-					<p class="event-title"><%= link_to event.title, event %></p>
-					<p> Date <%= event.date.strftime("%d/%m/%y") %></p>
-				</div>
+
+					<div class="row" id="event-row">
+						<p class="event-title"><%= link_to event.title, event %></p> 
+						<p>Date: <%= event.date.strftime("%d/%m/%y") %></p>
+					</div>
 				<% end %>
-				
-	<% end %>			
+			</div>
+		</div>				
+	<% end %>
 		
 </div>
+
 
