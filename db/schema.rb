@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181202035319) do
+ActiveRecord::Schema.define(version: 20181211135641) do
 
   create_table "event_attendees", force: :cascade do |t|
     t.integer "attendee_id"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20181202035319) do
     t.datetime "updated_at", null: false
     t.string "password_digest"
     t.string "remember_digest"
+    t.boolean "admin"
   end
 
 end

@@ -87,14 +87,14 @@ input {
 /*   Events */
 
 .events-wrapper {
-	background-color: #cfeac9;
+	background-color: #bfe7ff;
 	box-shadow: -2px 2px 3px 3px rgba(0,0,0,0.58);
 	margin-top: 10px;
 }
 
 .events-header {
-	background-color: #417e3d;
-	color: #fff1dd;
+	background-color: #61a3da;
+	color: black;
 	margin-bottom: 10px; 
 	
 	padding-top: 10px;
@@ -114,8 +114,8 @@ input {
 	padding-right: 10px;
 	margin: 5px;
 	
-	
-	background-image: linear-gradient(rgba(121,219,113,0.75), rgba(121,219,113,0.1));
+	/* this is #8fc5ec */
+	background-image: linear-gradient(rgba(143,197,236,0.75), rgba(143,197,236,0.1));
 
 }
 
@@ -164,7 +164,7 @@ input {
 
 .event-details {
 	margin-top: 20px;
-	background-color: #84b37c;
+	background-color: #bfe7ff;
 }
 
 .add-attendee {
@@ -179,7 +179,7 @@ input {
 }
 
 .user-events-header {
-	background-color: #89b781;
+	background-color: #78b4e3;
 	color: #fff1dd;
 	margin-bottom: 5px; 
 	padding-top: 5px;
@@ -188,8 +188,8 @@ input {
 }
 
 #user-events-header {
-	background-color: #89b781;
-	color: #fff1dd;
+	background-color: #78b4e3;
+	color: black;
 	margin-bottom: 5px; 
 	padding-top: 5px;
 	padding-left: 50px;
@@ -197,8 +197,8 @@ input {
 }
 
 #user-events-header:hover {
-	background-color: #acd0a4;
-	color: #fff1dd;
+	background-color: #bfe7ff;
+	color: black;
 	margin-bottom: 5px; 
 	padding-top: 5px;
 	padding-left: 50px;
@@ -217,17 +217,13 @@ input {
 }
 
 
-/* #146d1b
-#42853d
-#669e5f
-#89b781
-#acd0a4
-#cfeac9
-#146d1b
-#377e34
-#52904c
-#6ba164
-#84b37c
-#9dc595
-#b6d8af
-#cfeac9 */
+/* 
+#1370bd
+#3281c7
+#4a92d1
+#61a3da
+#78b4e3
+#8fc5ec
+#a7d6f6
+#bfe7ff
+ */
