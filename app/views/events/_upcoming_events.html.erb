@@ -2,12 +2,26 @@
 	<% if @upcoming_events.any? %>
 	<div class="row events-header">
 		Upcoming Events
-	</div>
+	</div>	
+	<div class="row paginate">
+		<%= will_paginate @upcoming_events, :next_label => '&rArr;', :previous_label => '&lArr;' %>
+	</div>	
+		
 		<% @upcoming_events.each do |event| %>
 			<div class="row" id="event-row">
 				<p class="event-title"><%= link_to event.title, event %></p>
 				<p class= "event-location">Location: <%= event.location %> | Date: 
 				<%= event.date.strftime("%d/%m/%y at %H:%M") %></p>
+			
+				<% if current_user.admin? %>
+				<p class= "event-location"> | <%= link_to "delete", event, method: :delete, 
+																	data: { confirm: "Are you sure?" } %></p>
+				<% end %>
 			</div>	
 		<% end %>
 	<% end %>
+
+	<div class="row paginate">
+		<%= will_paginate @upcoming_events, :next_label => '&rArr;', :previous_label => '&lArr;' %>
+	</div>	
+	

@@ -12,7 +12,11 @@
 		</div>
 		
 		<div class="col col-md-3">
-			Created by <%= link_to @event.creator.name, @event.creator %>
+			<% if @event.creator %>
+			Created by: <%= link_to @event.creator.name, @event.creator %>
+			<% else %>
+			Created by: deleted account
+			<% end %>
 		</div>
 
 		<div class="col col-md-3">
