@@ -13,7 +13,7 @@
 				<p class= "event-location">Location: <%= event.location %> | Date: 
 				<%= event.date.strftime("%d/%m/%y at %H:%M") %></p>
 			
-				<% if current_user.admin? %>
+				<% if logged_in? && current_user.admin? %>
 				<p class= "event-location"> | <%= link_to "delete", event, method: :delete, 
 																	data: { confirm: "Are you sure?" } %></p>
 				<% end %>
