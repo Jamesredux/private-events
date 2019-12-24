@@ -10,6 +10,12 @@ class EventsController < ApplicationController
 		@events = Event.all 
 		@past_events = Event.past.order(:date).paginate(page: params[:page], per_page: 5)
 		@upcoming_events = Event.upcoming.order(:date).paginate(page: params[:page], per_page: 5)
+
+		respond_to do |format|
+			format.html #index.html.erb
+			format.xml { render :xml => @events }
+			format.json { render :json => @events}
+		end	
 	end 
 
 	def new
